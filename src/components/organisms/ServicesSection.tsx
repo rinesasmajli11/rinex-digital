@@ -70,7 +70,7 @@ const ServicesSection: React.FC = () => {
     ];
 
     return (
-        <section id="services" className="relative py-32 overflow-hidden bg-subtle-dark">
+        <section id="services" className="relative py-16 md:py-32 overflow-hidden bg-subtle-dark">
             {/* Background Decor */}
             <div className="absolute inset-0 bg-grid pointer-events-none opacity-[0.03]"></div>
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full -mr-64 -mt-32 pointer-events-none"></div>
@@ -102,6 +102,8 @@ const ServicesSection: React.FC = () => {
 
             {/* Section Divider */}
             <div className="absolute bottom-0 left-0 w-full section-divider"></div>
+            {/* Section Divider */}
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );
 };

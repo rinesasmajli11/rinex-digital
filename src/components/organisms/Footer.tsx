@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
                     </div>
 
                     {/* Newsletter Column (4/12) */}
-                    <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
+                    <div className="hidden lg:flex lg:col-span-4 flex-col items-center lg:items-start text-center lg:text-left gap-6">
                         <h4 className="text-white font-bold text-base font-plus-jakarta">Stay Updated</h4>
                         <p className="text-white/40 text-[13px] leading-relaxed max-w-sm mx-auto lg:mx-0">
                             Subscribe to our newsletter for the latest digital insights and agency updates.

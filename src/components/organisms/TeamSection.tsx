@@ -28,7 +28,7 @@ const TeamSection: React.FC = () => {
     ];
 
     return (
-        <section id="team" className="relative py-24 md:py-32 overflow-hidden bg-subtle-dark">
+        <section id="team" className="relative py-12 md:py-32 overflow-hidden bg-subtle-dark">
             {/* Background Decor */}
             <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-primary/10 blur-[180px] rounded-full pointer-events-none"></div>
             <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary/10 blur-[180px] rounded-full pointer-events-none"></div>
@@ -48,28 +48,6 @@ const TeamSection: React.FC = () => {
                                     description="Our team of dedicated experts combines decades of experience in digital innovation, design, and strategic growth."
                                     centered={false}
                                 />
-                            </div>
-
-                            {/* Mobile Navigation Arrows */}
-                            <div className="flex md:hidden justify-end w-full gap-3 mt-4">
-                                <button
-                                    onClick={() => swiperRef.current?.slidePrev()}
-                                    className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 hover:border-primary/50 text-white transition-all duration-300 rounded-lg"
-                                    aria-label="Previous Member"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="m15 18-6-6 6-6" />
-                                    </svg>
-                                </button>
-                                <button
-                                    onClick={() => swiperRef.current?.slideNext()}
-                                    className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 hover:border-primary/50 text-white transition-all duration-300 rounded-lg"
-                                    aria-label="Next Member"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="m9 18 6-6-6-6" />
-                                    </svg>
-                                </button>
                             </div>
                         </div>
 
@@ -101,35 +79,15 @@ const TeamSection: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Members (Slider on Mobile, Grid on Desktop) */}
+                    {/* Right Column: Members (Grid on all devices) */}
                     <div className="lg:col-span-8 w-full">
-                        <div className="md:hidden">
-                            <Swiper
-                                onBeforeInit={(swiper) => {
-                                    swiperRef.current = swiper;
-                                }}
-                                modules={[Navigation]}
-                                spaceBetween={20}
-                                slidesPerView={1.2}
-                                className="w-full"
-                            >
-                                {members.map((member, index) => (
-                                    <SwiperSlide key={index}>
-                                        <MemberCard
-                                            name={member.name}
-                                            role={member.role}
-                                        />
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
-
-                        <div className="hidden md:grid grid-cols-2 gap-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                             {members.map((member, index) => (
                                 <div key={index} className="reveal-on-scroll" style={{ transitionDelay: `${index * 200}ms` }}>
                                     <MemberCard
                                         name={member.name}
                                         role={member.role}
+                                        image={member.image}
                                     />
                                 </div>
                             ))}
@@ -139,7 +97,7 @@ const TeamSection: React.FC = () => {
             </div>
 
             {/* Section Divider */}
-            <div className="absolute bottom-0 left-0 w-full section-divider"></div>
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );
 };

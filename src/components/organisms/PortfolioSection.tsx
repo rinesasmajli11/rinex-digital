@@ -46,7 +46,7 @@ const PortfolioSection: React.FC = () => {
     ];
 
     return (
-        <section id="portfolio" className="relative py-24 md:py-32 overflow-hidden bg-subtle-light">
+        <section id="portfolio" className="relative py-12 md:py-32 overflow-hidden bg-subtle-light">
             {/* Background Glows */}
             <div className="absolute inset-0 bg-grid pointer-events-none opacity-[0.05]"></div>
             <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 blur-[180px] rounded-full pointer-events-none"></div>
@@ -134,6 +134,8 @@ const PortfolioSection: React.FC = () => {
 
             {/* Section Divider */}
             <div className="absolute bottom-0 left-0 w-full section-divider"></div>
+            {/* Section Divider */}
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );
 };

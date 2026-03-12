@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../atoms/Logo';
 import NavMenu from '../molecules/NavMenu';
 import Button from '../atoms/Button';
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 px-6 py-6 transition-all duration-300">
+        <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-[#080b20]/90 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20">
             <div className="max-w-7xl mx-auto flex items-center justify-between relative z-10">
                 <Logo />
 

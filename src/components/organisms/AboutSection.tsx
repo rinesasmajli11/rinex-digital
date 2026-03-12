@@ -45,7 +45,7 @@ const AboutSection: React.FC = () => {
     ];
 
     return (
-        <section id="about" className="relative py-24 md:py-32 overflow-hidden bg-subtle-light">
+        <section id="about" className="relative py-12 md:py-32 overflow-hidden bg-subtle-light">
             {/* Background Decor */}
             <div className="absolute top-0 left-0 w-full h-full bg-grid pointer-events-none opacity-[0.03]"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 blur-[180px] rounded-full pointer-events-none"></div>
@@ -126,21 +126,23 @@ const AboutSection: React.FC = () => {
                 </div>
 
                 {/* Step 3: Horizontal Stats Row */}
-                <div className="flex flex-row justify-center items-center gap-8 md:gap-24 py-16 border-t border-b border-white/5 w-full overflow-hidden">
-                    <div className="hover:scale-105 transition-transform duration-300 shrink-0">
-                        <StatItem value="150+" label="Websites Built" />
+                <div className="grid grid-cols-3 justify-items-center md:flex md:flex-row md:justify-center md:items-center gap-2 md:gap-24 py-12 md:py-16 border-t border-b border-white/5 w-full">
+                    <div className="reveal-on-scroll" style={{ transitionDelay: '0ms' }}>
+                        <StatItem value="10+" label="Years Experience" />
                     </div>
-                    <div className="hover:scale-105 transition-transform duration-300 shrink-0">
+                    <div className="reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
                         <StatItem value="120+" label="Happy Clients" />
                     </div>
-                    <div className="hover:scale-105 transition-transform duration-300 shrink-0">
-                        <StatItem value="99%" label="Success Rate" />
+                    <div className="reveal-on-scroll" style={{ transitionDelay: '400ms' }}>
+                        <StatItem value="250+" label="Projects Done" />
                     </div>
                 </div>
             </div>
 
             {/* Section Divider */}
             <div className="absolute bottom-0 left-0 w-full section-divider"></div>
+            {/* Section Divider */}
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );
 };
