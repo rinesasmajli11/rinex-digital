@@ -5,13 +5,12 @@ import StatItem from '../molecules/StatItem';
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-screen pt-48 lg:pt-48 pb-20 flex items-center overflow-hidden">
+        <section className="relative min-h-screen pt-48 lg:pt-48 pb-20 flex items-center overflow-hidden bg-subtle-dark">
             {/* Background Mesh/Glow */}
-            <div className="absolute inset-0 bg-[#05070a]/50 pointer-events-none"></div>
             <div className="absolute top-0 left-0 w-full h-full bg-grid pointer-events-none opacity-10"></div>
 
-            <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[180px] rounded-full pointer-events-none"></div>
-            <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/15 blur-[180px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[180px] rounded-full pointer-events-none"></div>
+            <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary/15 blur-[180px] rounded-full pointer-events-none"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
@@ -53,7 +52,7 @@ const Hero: React.FC = () => {
                         {/* Main Mockup */}
                         <div className="relative w-full h-full group-hover:scale-[1.02] transition-transform duration-500">
                             <Image
-                                src="/herobanner4.png"
+                                src="/herobanner6.png"
                                 alt="Rinex Digital UI Mockup"
                                 fill
                                 className="object-contain"
@@ -68,8 +67,8 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* 3. Mobile CTA Button (Order 3, Hidden on Desktop) */}
-                <div className="relative z-10 flex lg:hidden justify-center order-3 mb-8">
-                    <Button variant="primary" className="w-full sm:w-auto px-12">
+                <div className="relative z-10 flex lg:hidden justify-center order-3 mb-8 w-full">
+                    <Button variant="primary" className="w-[85%] max-w-[320px] !py-3 !px-6 text-sm">
                         Start Your Project →
                     </Button>
                 </div>

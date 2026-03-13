@@ -15,9 +15,9 @@ const Button: React.FC<ButtonProps> = ({
     const baseStyles = 'px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wider';
 
     const variants = {
-        primary: 'bg-gradient-to-right from-[#4f46e5] to-[#7c3aed] text-white shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] hover:scale-105 active:scale-95',
-        secondary: 'bg-white text-[#0b0f2a] hover:bg-opacity-90 active:scale-95',
-        outline: 'bg-transparent border border-white/20 text-white hover:bg-white/10 active:scale-95'
+        primary: 'bg-transparent border border-primary text-primary font-bold shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:bg-primary/10 hover:scale-[1.02] active:scale-95',
+        secondary: 'bg-white text-accent hover:bg-opacity-90 active:scale-95',
+        outline: 'border border-white/20 text-white hover:bg-white/5 active:scale-95',
     };
 
     const widthStyle = fullWidth ? 'w-full' : '';

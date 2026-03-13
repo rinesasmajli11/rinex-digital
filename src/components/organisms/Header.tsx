@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-[#080b20]/90 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20">
+        <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-3 bg-[#050505]/95 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20">
             <div className="max-w-7xl mx-auto flex items-center justify-between relative z-10">
                 <Logo />
 
@@ -45,8 +45,8 @@ const Header: React.FC = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 bg-[#0b0f2a]/95 backdrop-blur-xl z-40 md:hidden transition-all duration-500 flex flex-col items-center justify-center gap-8 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                <nav className="flex flex-col items-center gap-6">
+            <div className={`fixed inset-0 top-0 h-[100dvh] bg-[#050505] z-40 md:hidden transition-all duration-500 flex flex-col items-center justify-center pt-20 pb-8 gap-6 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                <nav className="flex flex-col items-center justify-center gap-6 h-full">
                     {navLinks.map((link, index) => (
                         <div
                             key={link.name}
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             <NavLink href={link.href}>
-                                <span className="text-3xl">{link.name}</span>
+                                <span className="text-2xl font-medium text-white">{link.name}</span>
                             </NavLink>
                         </div>
                     ))}

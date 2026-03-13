@@ -5,7 +5,7 @@ import Button from '../atoms/Button';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="relative pt-16 pb-12 overflow-hidden border-t border-white/5 bg-[#0b0f2a]">
+        <footer className="relative pt-16 pb-12 overflow-hidden border-t border-white/5 bg-[#050505]">
             {/* Background Decor - Hero Style */}
             <div className="absolute top-0 right-[-10%] w-[400px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
             <div className="absolute bottom-0 left-[-10%] w-[400px] h-[400px] bg-secondary/10 blur-[120px] rounded-full pointer-events-none"></div>
