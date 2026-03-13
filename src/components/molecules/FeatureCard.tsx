@@ -13,8 +13,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
             <div className="absolute inset-0 bg-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
 
             <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-white/10 transition-all duration-500">
-                    <div className="text-white/80 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:border-primary/50 group-hover:bg-primary/5 transition-all duration-500">
+                    <div className="text-primary transition-colors">
                         {icon}
                     </div>
                 </div>
@@ -29,7 +29,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
             </div>
 
             {/* Subtle bottom indicator */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-primary to-secondary transition-all duration-500 group-hover:w-1/2"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-500 group-hover:w-1/2"></div>
         </div>
     );
 };

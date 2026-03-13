@@ -124,19 +124,6 @@ const AboutSection: React.FC = () => {
                         ))}
                     </div>
                 </div>
-
-                {/* Step 3: Horizontal Stats Row */}
-                <div className="grid grid-cols-3 justify-items-center md:flex md:flex-row md:justify-center md:items-center gap-2 md:gap-24 py-12 md:py-16 border-t border-b border-white/5 w-full">
-                    <div className="reveal-on-scroll" style={{ transitionDelay: '0ms' }}>
-                        <StatItem value="10+" label="Years Experience" />
-                    </div>
-                    <div className="reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
-                        <StatItem value="120+" label="Happy Clients" />
-                    </div>
-                    <div className="reveal-on-scroll" style={{ transitionDelay: '400ms' }}>
-                        <StatItem value="250+" label="Projects Done" />
-                    </div>
-                </div>
             </div>
 
             {/* Section Divider */}
