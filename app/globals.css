@@ -18,7 +18,8 @@
   --color-accent: var(--accent);
 
   --font-inter: var(--font-inter);
-  --font-plus-jakarta: var(--font-plus-jakarta);
+  --font-syne: var(--font-syne);
+  --font-outfit: var(--font-outfit);
 
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
@@ -42,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Glassmorphism */

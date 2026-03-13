@@ -9,7 +9,7 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, highlighted = false }) => {
     return (
-        <div className={`group relative p-6 md:p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 border ${highlighted
+        <div className={`group relative h-full p-6 md:p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 border ${highlighted
             ? 'bg-gradient-to-br from-primary to-primary/80 border-primary/20 shadow-[0_0_50px_rgba(var(--primary-rgb),0.3)]'
             : 'glass border-white/5 hover:border-white/10'
             }`}>
@@ -39,7 +39,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, hig
                 </div>
 
                 {/* Content */}
-                <h3 className={`text-xl md:text-2xl font-bold mb-3 md:mb-4 font-plus-jakarta ${highlighted ? 'text-white' : 'text-white'}`}>
+                <h3 className={`text-xl md:text-2xl font-bold mb-3 md:mb-4 font-syne ${highlighted ? 'text-white' : 'text-primary'}`}>
                     {title}
                 </h3>
 

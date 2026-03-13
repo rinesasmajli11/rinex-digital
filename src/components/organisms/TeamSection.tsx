@@ -8,7 +8,6 @@ import 'swiper/css';
 
 import SectionHeading from '../molecules/SectionHeading';
 import MemberCard from '../molecules/MemberCard';
-import Button from '../atoms/Button';
 
 const TeamSection: React.FC = () => {
     const swiperRef = useRef<SwiperType | null>(null);
@@ -45,7 +44,7 @@ const TeamSection: React.FC = () => {
                                     subtitle="Expert Team"
                                     title="Meet Our"
                                     gradientTitle="Creative Minds"
-                                    description="Our team of dedicated experts combines decades of experience in digital innovation, design, and strategic growth."
+                                    description="A passionate team of developers, designers, and digital specialists dedicated to building innovative solutions and delivering exceptional digital experiences."
                                     centered={false}
                                 />
                             </div>
@@ -72,11 +71,6 @@ const TeamSection: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="pt-4 flex justify-center md:justify-start">
-                            <Button variant="outline">
-                                See Full Team
-                            </Button>
-                        </div>
                     </div>
 
                     {/* Right Column: Members (Grid on all devices) */}

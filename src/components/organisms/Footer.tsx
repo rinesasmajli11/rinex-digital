@@ -4,6 +4,47 @@ import Logo from '../atoms/Logo';
 import Button from '../atoms/Button';
 
 const Footer: React.FC = () => {
+    const socialLinks = [
+        {
+            name: 'Facebook',
+            href: '#',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+            )
+        },
+        {
+            name: 'Instagram',
+            href: '#',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+            )
+        },
+        {
+            name: 'TikTok',
+            href: '#',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4c1.2 1.4 2.8 2.3 4.7 2.4" />
+                </svg>
+            )
+        }
+    ];
+
+    const services = [
+        'Website Development',
+        'UI / UX Design',
+        'Mobile Apps',
+        'Social Media',
+        'Content Creation',
+        'Copywriting'
+    ];
+
     return (
         <footer className="relative pt-16 pb-12 overflow-hidden border-t border-white/5 bg-[#050505]">
             {/* Background Decor - Hero Style */}
@@ -23,11 +64,11 @@ const Footer: React.FC = () => {
 
                         {/* Social Links */}
                         <div className="flex justify-center lg:justify-start gap-4">
-                            {[1, 2, 3].map((i) => (
-                                <Link key={i} href="#" className="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center transition-all duration-300 hover:border-primary/40 hover:text-primary group">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white group-hover:text-primary transition-colors">
-                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                                    </svg>
+                            {socialLinks.map((item) => (
+                                <Link key={item.name} href={item.href} className="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center transition-all duration-300 hover:border-primary/40 hover:text-primary group" aria-label={item.name}>
+                                    <span className="text-white group-hover:text-primary transition-colors">
+                                        {item.icon}
+                                    </span>
                                 </Link>
                             ))}
                         </div>
@@ -37,7 +78,7 @@ const Footer: React.FC = () => {
                     <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
                         <h4 className="text-white font-bold text-base font-plus-jakarta">Services</h4>
                         <ul className="flex flex-col gap-4">
-                            {['Digital Strategy', 'Mobile Development', 'UI/UX Design', 'Cloud Solutions', 'AI & Data'].map((item) => (
+                            {services.map((item) => (
                                 <li key={item}>
                                     <Link href="#" className="text-white/40 text-[13px] hover:text-primary transition-colors duration-300">
                                         {item}

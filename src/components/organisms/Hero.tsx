@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
 import Button from '../atoms/Button';
 
 const Counter: React.FC<{ end: number; duration?: number; suffix?: string }> = ({ end, duration = 2000, suffix = "" }) => {
@@ -53,28 +52,28 @@ const Hero: React.FC = () => {
         setMounted(true);
     }, []);
 
-    const title = "Future of Digital Excellence";
+    const title = "Building Modern Websites & Digital Experiences";
     const words = title.split(" ");
 
     return (
         <section className="relative min-h-[90vh] lg:min-h-screen pt-32 pb-16 flex flex-col items-center justify-center overflow-hidden bg-black">
 
-            {/* --- BACKGROUND PHOTO --- */}
+            {/* --- BACKGROUND VIDEO --- */}
             <div className="absolute inset-0 z-0 overflow-hidden">
-                <Image
-                    src="/finalhero.png"
-                    alt="Hero Background"
-                    fill
-                    priority
-                    className="object-cover opacity-60"
-                />
-                {/* Shadow/Dark Overlay */}
-                <div className="absolute inset-0 bg-black/30"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black"></div>
-
-                {/* Subtle Overlays (Reduced) */}
+                <video
+                    className="h-full w-full object-cover opacity-42"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                >
+                    <source src="/herovideo.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.72),rgba(0,0,0,0.34),rgba(0,0,0,0.84))]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(222,201,132,0.36),transparent_44%)]"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(222,201,132,0.18),transparent_36%,rgba(222,201,132,0.1)_100%)]"></div>
                 <div className="absolute inset-0 bg-grid-dots opacity-[0.02]"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[120px] rounded-full opacity-20"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/15 blur-[120px] rounded-full opacity-35"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
@@ -90,10 +89,10 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
 
-                {/* --- MAIN TYPOGRAPHY (Reduced Size + Desktop Margin) --- */}
-                <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-black leading-[1.1] tracking-tight text-white mb-6 md:mt-12 font-plus-jakarta max-w-4xl">
+                {/* --- MAIN TYPOGRAPHY --- */}
+                <h1 className="text-[30px] md:text-[42px] lg:text-[58px] font-bold leading-[1.02] tracking-tight text-white mb-4 md:mt-12 font-outfit max-w-3xl">
                     {mounted && words.map((word, i) => (
-                        <span key={i} className="inline-block overflow-hidden mr-[0.25em] last:mr-0">
+                        <span key={i} className="inline-block overflow-hidden mr-[0.2em] last:mr-0">
                             <span
                                 className="inline-block animate-text-reveal"
                                 style={{
@@ -109,31 +108,43 @@ const Hero: React.FC = () => {
                     ))}
                 </h1>
 
-                <p className="max-w-xl text-base md:text-lg text-white leading-relaxed mb-10 animate-text-reveal" style={{ animationDelay: '0.8s' }}>
-                    We weave artificial intelligence with premium design to create
-                    digital landmarks that redefine your industry's standards.
+                <p className="max-w-[320px] md:max-w-md text-[14px] md:text-[20px] text-white/72 leading-[1.7] tracking-[0.01em] mb-8 animate-text-reveal font-outfit" style={{ animationDelay: '0.8s' }}>
+                    We build modern websites and digital solutions that help your business grow.
                 </p>
 
                 {/* --- CTAs (Single Button with Gold Gradient) --- */}
                 <div className="flex flex-col items-center gap-6 animate-text-reveal" style={{ animationDelay: '1s' }}>
                     <Button
                         variant="primary"
-                        className="px-10 py-4.5 rounded-2xl text-[12px] font-black uppercase tracking-[0.2em] shadow-[0_15px_35px_rgba(222,201,132,0.2)] hover:bg-primary-hover transition-all hover:scale-105 active:scale-95 shimmer-effect !border-[#DEC984] !text-[#DEC984]"
+                        className="px-10 py-4 rounded-2xl text-[11px] font-black uppercase tracking-[0.24em] shadow-[0_20px_40px_rgba(222,201,132,0.15)] hover:bg-primary-hover transition-all hover:scale-105 active:scale-95 shimmer-effect !border-[#DEC984] !text-[#DEC984]"
                     >
-                        Initialize Project
+                        Book a Consultation
                     </Button>
                 </div>
 
-                {/* --- STATS BAR (More Compact + Multi-Column Mobile) --- */}
+                {/* --- STATS BAR (Syne + Outfit Mix) --- */}
                 <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-6 mt-16 md:mt-24 w-full max-w-3xl animate-text-reveal" style={{ animationDelay: '1.2s' }}>
                     {[
                         { label: 'Success Rate', value: 99, suffix: '%' },
-                        { label: 'Happy Clients', value: 150, suffix: '+' },
-                        { label: 'Awards Won', value: 12, suffix: '' }
+                        { label: 'Happy Clients', value: 20, suffix: '+' },
+                        { label: 'Years Experience', value: 5, suffix: '+ ' }
                     ].map((stat, i) => (
                         <div key={i} className="glass p-3 md:p-6 rounded-[1.2rem] md:rounded-[1.5rem] border border-white/5 text-center group hover:border-[#DEC984]/30 transition-all duration-500">
-                            <p className="text-[7px] md:text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] mb-1 md:mb-1.5">{stat.label}</p>
-                            <h4 className="text-base md:text-2xl font-black text-white group-hover:text-[#DEC984] transition-colors leading-none">
+                            <p className="text-[7px] md:text-[9px] font-bold text-[#DEC984] uppercase tracking-[0.3em] mb-2 md:mb-1.5">
+                                {stat.label === 'Success Rate' ? (
+                                    <>
+                                        <span className="md:hidden">
+                                            Success
+                                            <br />
+                                            Rate
+                                        </span>
+                                        <span className="hidden md:inline">{stat.label}</span>
+                                    </>
+                                ) : (
+                                    stat.label
+                                )}
+                            </p>
+                            <h4 className="text-[15px] md:text-[22px] font-bold text-white group-hover:text-[#DEC984] transition-colors leading-none font-outfit">
                                 {mounted ? <Counter end={stat.value} suffix={stat.suffix} /> : '0'}
                             </h4>
                         </div>

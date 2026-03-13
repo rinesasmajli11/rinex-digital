@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from 'react';
-import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -9,7 +8,6 @@ import 'swiper/css';
 
 import SectionHeading from '../molecules/SectionHeading';
 import FeatureCard from '../molecules/FeatureCard';
-import StatItem from '../molecules/StatItem';
 
 const AboutSection: React.FC = () => {
     const swiperRef = useRef<SwiperType | null>(null);
@@ -21,8 +19,9 @@ const AboutSection: React.FC = () => {
                     <path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" />
                 </svg>
             ),
-            title: "Digital Innovation",
-            description: "We leverage the latest technologies to build forward-thinking solutions that keep your business ahead of the curve."
+            title: "Web Development",
+            subtitle: "Custom Websites Built for Performance",
+            description: "We build fast, modern, and scalable websites designed to strengthen your brand and support business growth."
         },
         {
             icon: (
@@ -30,8 +29,9 @@ const AboutSection: React.FC = () => {
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
             ),
-            title: "Creative Excellence",
-            description: "Our designs are not just beautiful—they are crafted to drive engagement and deliver exceptional user experiences."
+            title: "UI / UX Design",
+            subtitle: "Design That Delivers Exceptional User Experience",
+            description: "We create intuitive and visually refined interfaces focused on usability, clarity, and strong brand presence."
         },
         {
             icon: (
@@ -39,8 +39,9 @@ const AboutSection: React.FC = () => {
                     <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />
                 </svg>
             ),
-            title: "Strategic Growth",
-            description: "We focus on data-driven strategies that help scale your brand and maximize your digital presence."
+            title: "Digital Marketing & Content",
+            subtitle: "Content and Strategy That Builds Your Brand",
+            description: "We develop clear content and smart digital strategies that help your brand reach and engage the right audience."
         }
     ];
 
@@ -105,6 +106,7 @@ const AboutSection: React.FC = () => {
                                     <FeatureCard
                                         icon={feature.icon}
                                         title={feature.title}
+                                        subtitle={feature.subtitle}
                                         description={feature.description}
                                     />
                                 </SwiperSlide>
@@ -118,6 +120,7 @@ const AboutSection: React.FC = () => {
                                 <FeatureCard
                                     icon={feature.icon}
                                     title={feature.title}
+                                    subtitle={feature.subtitle}
                                     description={feature.description}
                                 />
                             </div>
@@ -128,7 +131,6 @@ const AboutSection: React.FC = () => {
 
             {/* Section Divider */}
             <div className="absolute bottom-0 left-0 w-full section-divider"></div>
-            {/* Section Divider */}
             <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );

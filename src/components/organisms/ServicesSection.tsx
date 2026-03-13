@@ -11,61 +11,64 @@ const ServicesSection: React.FC = () => {
                     <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
             ),
-            title: "Custom Software Development",
-            description: "Scalable, secure, and high-performance apps tailored to your unique business needs and growth goals."
+            title: "Website Development",
+            description: "We build modern, fast, and responsive websites tailored to your brand and business goals."
         },
         {
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                    <path d="M2 12h20"></path>
+                    <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"></path>
+                    <path d="M8 12h8"></path>
+                    <path d="M12 8v8"></path>
                 </svg>
             ),
-            title: "AI & Machine Learning",
-            description: "Automate decisions, forecast trends, and power your product with data-driven intelligent solutions."
+            title: "UI / UX Design",
+            description: "We design intuitive and visually engaging interfaces that improve usability and user experience."
         },
         {
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17.5 19l4.5-4-4.5-4"></path>
-                    <path d="M3 12h18"></path>
-                    <path d="M6.5 5L2 9l4.5 4"></path>
+                    <rect x="7" y="2" width="10" height="20" rx="2"></rect>
+                    <path d="M11 18h2"></path>
+                    <path d="M10 5h4"></path>
                 </svg>
             ),
-            title: "Cloud Solutions",
-            description: "Future-proof your infrastructure with seamless AWS, Azure, or GCP deployments and management."
+            title: "Mobile App Development",
+            description: "We design and develop modern mobile applications that deliver smooth performance and a great user experience across devices."
         },
         {
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                    <path d="M2 17l10 5 10-5"></path>
-                    <path d="M2 12l10 5 10-5"></path>
+                    <path d="M18 8a3 3 0 1 1 0 6"></path>
+                    <path d="M6 8a3 3 0 1 0 0 6"></path>
+                    <path d="M8 18a6 6 0 0 1 8 0"></path>
+                    <path d="M12 9v3"></path>
                 </svg>
             ),
-            title: "UI/UX Design",
-            description: "Seamless, human-centered digital experiences that drive engagement and convert visitors into customers."
+            title: "Social Media Management",
+            description: "We manage and grow your social media presence with strategic content and consistent branding."
         },
         {
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                 </svg>
             ),
-            title: "Web & Mobile App Development",
-            description: "From MVPs to complex enterprise applications — we code what you imagine into reality."
+            title: "Content Creation",
+            description: "We create engaging digital content that strengthens your brand and connects with your audience."
         },
         {
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M4 19V5"></path>
+                    <path d="M20 19V5"></path>
+                    <path d="M4 7c4 0 4 2 8 2s4-2 8-2"></path>
+                    <path d="M4 13c4 0 4 2 8 2s4-2 8-2"></path>
                 </svg>
             ),
-            title: "Cybersecurity",
-            description: "Protect what matters most with advanced security frameworks, audits, and proactive monitoring."
+            title: "Copywriting",
+            description: "We craft clear and persuasive copy that communicates your message and drives action."
         }
     ];
 
@@ -78,13 +81,15 @@ const ServicesSection: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
-                <SectionHeading
-                    subtitle="Services"
-                    title="Innovating Tomorrow."
-                    gradientTitle="Building Today."
-                    description="Empowering businesses with next-gen technology solutions from custom software to AI-driven platforms, we engineer your digital success."
-                    centered={true}
-                />
+                <div className="max-w-4xl mx-auto">
+                    <SectionHeading
+                        subtitle="Services"
+                        title="Digital Solutions That"
+                        gradientTitle="Elevate Your Brand"
+                        description="We provide modern web development, design, and digital marketing services that help businesses build a strong and successful online presence."
+                        centered={true}
+                    />
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
                     {services.map((service, index) => (
@@ -93,7 +98,7 @@ const ServicesSection: React.FC = () => {
                                 icon={service.icon}
                                 title={service.title}
                                 description={service.description}
-                                highlighted={(service as any).highlighted || false}
+                                highlighted={(service as { highlighted?: boolean }).highlighted || false}
                             />
                         </div>
                     ))}
@@ -102,7 +107,6 @@ const ServicesSection: React.FC = () => {
 
             {/* Section Divider */}
             <div className="absolute bottom-0 left-0 w-full section-divider"></div>
-            {/* Section Divider */}
             <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );

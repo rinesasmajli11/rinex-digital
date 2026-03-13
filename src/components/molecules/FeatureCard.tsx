@@ -3,10 +3,11 @@ import React from 'react';
 interface FeatureCardProps {
     icon: React.ReactNode;
     title: string;
+    subtitle?: string;
     description: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, subtitle, description }) => {
     return (
         <div className="group relative p-8 rounded-3xl glass border border-white/5 hover:border-white/10 transition-all duration-500 hover:translate-y-[-8px]">
             {/* Subtle Glow Effect */}
@@ -19,11 +20,17 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
                     </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-3 font-plus-jakarta tracking-tight">
+                <h3 className="text-lg font-bold text-white mb-3 font-syne tracking-tight">
                     {title}
                 </h3>
 
-                <p className="text-white/40 text-sm leading-relaxed">
+                {subtitle ? (
+                    <p className="text-[#DEC984] text-sm font-semibold leading-snug mb-3 font-outfit">
+                        {subtitle}
+                    </p>
+                ) : null}
+
+                <p className="text-white/40 text-sm leading-relaxed font-outfit">
                     {description}
                 </p>
             </div>
