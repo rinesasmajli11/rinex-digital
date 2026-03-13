@@ -33,14 +33,14 @@ const Header: React.FC = () => {
     }, []);
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-2 md:py-3 ${isScrolled ? 'bg-[#050505]/96 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/25' : 'bg-black/30 backdrop-blur-sm border-b border-white/[0.03]'}`}>
+        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 py-1.5 md:px-6 md:py-3 ${isScrolled ? 'bg-[#050505]/96 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/25' : 'bg-black/30 backdrop-blur-sm border-b border-white/[0.03]'}`}>
             <div className="max-w-7xl mx-auto flex items-center justify-between relative z-10">
                 <Logo />
 
                 {/* Desktop Menu */}
                 <NavMenu />
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                     <Button variant="outline" className="hidden lg:flex !px-6 !py-2.5 !text-[12px] !border-[#DEC984] !text-[#DEC984]">
                         Book a Consultation
                     </Button>
@@ -48,13 +48,13 @@ const Header: React.FC = () => {
                     {/* --- PREMIUM BURGER BUTTON --- */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`md:hidden relative w-12 h-12 flex flex-col items-center justify-center rounded-xl transition-all duration-500 z-50 ${isMenuOpen ? 'bg-white/10' : 'bg-white/[0.03] border border-white/5'}`}
+                        className={`md:hidden relative w-10 h-10 flex flex-col items-center justify-center rounded-lg transition-all duration-500 z-50 ${isMenuOpen ? 'bg-white/10' : 'bg-white/[0.03] border border-white/5'}`}
                         aria-label="Toggle Menu"
                     >
-                        <div className="flex flex-col gap-1.5 w-6">
-                            <span className={`h-0.5 bg-[#DEC984] transition-all duration-500 rounded-full ${isMenuOpen ? 'rotate-45 translate-y-2 w-6' : 'w-6'}`}></span>
-                            <span className={`h-0.5 bg-[#DEC984] transition-all duration-500 rounded-full ${isMenuOpen ? 'opacity-0' : 'w-4 ml-auto'}`}></span>
-                            <span className={`h-0.5 bg-[#DEC984] transition-all duration-500 rounded-full ${isMenuOpen ? '-rotate-45 -translate-y-2 w-6' : 'w-6'}`}></span>
+                        <div className="flex flex-col gap-1.5 w-5">
+                            <span className={`h-0.5 bg-[#DEC984] transition-all duration-500 rounded-full ${isMenuOpen ? 'rotate-45 translate-y-2 w-5' : 'w-5'}`}></span>
+                            <span className={`h-0.5 bg-[#DEC984] transition-all duration-500 rounded-full ${isMenuOpen ? 'opacity-0' : 'w-3 ml-auto'}`}></span>
+                            <span className={`h-0.5 bg-[#DEC984] transition-all duration-500 rounded-full ${isMenuOpen ? '-rotate-45 -translate-y-2 w-5' : 'w-5'}`}></span>
                         </div>
                     </button>
                 </div>
