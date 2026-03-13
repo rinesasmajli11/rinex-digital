@@ -78,17 +78,6 @@ const Hero: React.FC = () => {
 
             <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
 
-                {/* --- TOP BADGE (Mobile Only) --- */}
-                <div className="mb-6 animate-text-reveal md:hidden" style={{ animationDelay: '0.1s' }}>
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-[9px] font-black uppercase tracking-[0.3em] text-white/60">
-                        <span className="flex h-1.5 w-1.5 relative">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary"></span>
-                        </span>
-                        Elevating Digital Frontiers
-                    </div>
-                </div>
-
                 {/* --- MAIN TYPOGRAPHY --- */}
                 <h1 className="text-[30px] md:text-[42px] lg:text-[58px] font-bold leading-[1.02] tracking-tight text-white mb-4 md:mt-12 font-outfit max-w-3xl">
                     {mounted && words.map((word, i) => (
