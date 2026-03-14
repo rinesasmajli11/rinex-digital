@@ -17,7 +17,7 @@ const PortfolioSection: React.FC = () => {
             title: "H&F Finance Website",
             category: "Finance",
             description: "Professional website developed for an accounting company offering financial and bookkeeping services.",
-            image: "/hf-finance.png",
+            image: "/image.png",
         },
         {
             title: "Premium Skincare Brand",
@@ -32,10 +32,10 @@ const PortfolioSection: React.FC = () => {
             image: "/real-estate.png",
         },
         {
-            title: "Handcrafted Furniture Brand",
-            category: "Interior Design",
-            description: "Handcrafted furniture and interior design brand focused on timeless pieces and refined living spaces.",
-            image: "/house.png",
+            title: "Construction Company Website",
+            category: "Construction",
+            description: "A modern and responsive construction company website designed to showcase services, projects, and company expertise.",
+            image: "/build.png",
         },
         {
             title: "Organic Food",
@@ -48,6 +48,36 @@ const PortfolioSection: React.FC = () => {
             category: "Healthcare",
             description: "A modern and responsive hospital website designed to present medical services, doctors, and appointment booking.",
             image: "/hospital.png",
+        },
+        {
+            title: "Handcrafted Furniture Brand",
+            category: "Interior Design",
+            description: "Handcrafted furniture and interior design brand focused on timeless pieces and refined living spaces.",
+            image: "/house.png",
+        },
+        {
+            title: "Enjoy Natural Kosovo Tea",
+            category: "Tea Brand",
+            description: "Fresh and quality tea from the nature of Kosovo, for a pure and relaxing taste in every cup.",
+            image: "/tee.png",
+        },
+        {
+            title: "Smart Packaging for Modern Brands",
+            category: "Packaging",
+            description: "Innovative packaging solutions designed to protect products, enhance presentation, and support growing businesses.",
+            image: "/caffe.png",
+        },
+        {
+            title: "Professional Gym & Fitness Training",
+            category: "Fitness",
+            description: "Personalized workouts, strength programs, and expert coaching for a stronger body.",
+            image: "/fitness.png",
+        },
+        {
+            title: "Professional Hair Color & Beauty Products",
+            category: "Beauty",
+            description: "A modern beauty store offering high-quality hair dyes and styling products designed to help you express your unique style.",
+            image: "/hairsalon.png",
         }
     ];
 
