@@ -12,7 +12,7 @@ const navLinks = [
 
 const NavMenu: React.FC = () => {
     return (
-        <nav className="hidden md:flex items-center gap-10 glass px-12 py-4 rounded-full text-lg">
+        <nav className="hidden md:flex items-center gap-10 px-12 py-4 rounded-full text-lg bg-black/35 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
             {navLinks.map((link) => (
                 <NavLink key={link.name} href={link.href}>
                     {link.name}

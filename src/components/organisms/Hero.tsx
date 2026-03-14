@@ -47,9 +47,27 @@ const Counter: React.FC<{ end: number; duration?: number; suffix?: string }> = (
 
 const Hero: React.FC = () => {
     const [mounted, setMounted] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
         setMounted(true);
+
+        const video = videoRef.current;
+        if (!video) return;
+
+        video.muted = true;
+        video.defaultMuted = true;
+        video.setAttribute('playsinline', 'true');
+
+        const playVideo = async () => {
+            try {
+                await video.play();
+            } catch {
+                // Mobile browsers may still block autoplay in some cases.
+            }
+        };
+
+        playVideo();
     }, []);
 
     const title = "Building Modern Websites & Digital Experiences";
@@ -61,15 +79,18 @@ const Hero: React.FC = () => {
             {/* --- BACKGROUND VIDEO --- */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <video
-                    className="h-full w-full object-cover opacity-42"
+                    ref={videoRef}
+                    className="h-full w-full object-cover opacity-36"
                     autoPlay
                     muted
                     loop
                     playsInline
+                    preload="auto"
+                    poster="/hero.png"
                 >
                     <source src="/herovideo.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.72),rgba(0,0,0,0.34),rgba(0,0,0,0.84))]"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.82),rgba(0,0,0,0.46),rgba(0,0,0,0.9))]"></div>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(222,201,132,0.36),transparent_44%)]"></div>
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(222,201,132,0.18),transparent_36%,rgba(222,201,132,0.1)_100%)]"></div>
                 <div className="absolute inset-0 bg-grid-dots opacity-[0.02]"></div>
@@ -79,7 +100,7 @@ const Hero: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
 
                 {/* --- MAIN TYPOGRAPHY --- */}
-                <h1 className="text-[30px] md:text-[42px] lg:text-[58px] font-bold leading-[1.02] tracking-tight text-white mb-4 md:mt-12 font-outfit max-w-3xl">
+                <h1 className="text-[30px] md:text-[42px] lg:text-[58px] font-semibold leading-[1.02] tracking-tight text-white mb-4 md:mt-12 font-inter max-w-3xl">
                     {mounted && words.map((word, i) => (
                         <span key={i} className="inline-block overflow-hidden mr-[0.2em] last:mr-0">
                             <span

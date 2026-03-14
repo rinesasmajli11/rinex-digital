@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
                         alt="Rinex Digital Logo"
                         width={135}
                         height={12}
-
+                        className="w-[110px] md:w-[135px] h-auto"
                     />
                 </div>
             </div>
