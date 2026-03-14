@@ -14,34 +14,40 @@ const PortfolioSection: React.FC = () => {
 
     const projects = [
         {
-            title: "Fintech Dashboard",
-            category: "Fintech",
-            description: "Streamlined user analytics & real-time transactions for next-gen financial tools.",
+            title: "H&F Finance Website",
+            category: "Finance",
+            description: "Professional website developed for an accounting company offering financial and bookkeeping services.",
+            image: "/hf-finance.png",
         },
         {
-            title: "E-commerce Platform",
-            category: "E-Commerce",
-            description: "300% increase in conversion through custom storefront & seamless UX.",
+            title: "Premium Skincare Brand",
+            category: "Skincare",
+            description: "Solevia produces clean skincare solutions designed to nourish, restore, and protect the skin every day.",
+            image: "/skincare.png",
         },
         {
-            title: "AI-Powered Tool",
-            category: "AI",
-            description: "Reduced support tickets by 40% using predictive models and intelligent automation.",
+            title: "Velaris Estates",
+            category: "Real Estate",
+            description: "Helping clients find luxury homes and prime real estate investments worldwide.",
+            image: "/real-estate.png",
         },
         {
-            title: "Crypto Wallet App",
-            category: "Blockchain",
-            description: "Secure, intuitive interface for managing digital assets with multi-chain support.",
+            title: "Handcrafted Furniture Brand",
+            category: "Interior Design",
+            description: "Handcrafted furniture and interior design brand focused on timeless pieces and refined living spaces.",
+            image: "/house.png",
         },
         {
-            title: "Health & Fitness Tracker",
-            category: "Mobile App",
-            description: "Personalized workout routines and real-time health monitoring integrated with wearable tech.",
+            title: "Organic Food",
+            category: "Restaurant",
+            description: "Explore our diverse menu and enjoy high-quality food delivered with exceptional service.",
+            image: "/resturant.png",
         },
         {
-            title: "Real Estate Portal",
-            category: "PropTech",
-            description: "Immersive 3D virtual tours and advanced search functionality for modern property listings.",
+            title: "Hospital Website",
+            category: "Healthcare",
+            description: "A modern and responsive hospital website designed to present medical services, doctors, and appointment booking.",
+            image: "/hospital.png",
         }
     ];
 
@@ -115,6 +121,7 @@ const PortfolioSection: React.FC = () => {
                                         title={project.title}
                                         category={project.category}
                                         description={project.description}
+                                        image={project.image}
                                     />
                                 </div>
                             </SwiperSlide>
