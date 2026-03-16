@@ -61,14 +61,13 @@ const ServicesSection: React.FC = () => {
         {
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 19V5"></path>
-                    <path d="M20 19V5"></path>
-                    <path d="M4 7c4 0 4 2 8 2s4-2 8-2"></path>
-                    <path d="M4 13c4 0 4 2 8 2s4-2 8-2"></path>
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M8 8h8v8H8z"/>
+                    <circle cx="8.5" cy="8.5" r=".5"/>
                 </svg>
             ),
-            title: "Copywriting",
-            description: "We craft clear and persuasive copy that communicates your message and drives action."
+            title: "Graphic Design",
+            description: "We create stunning visuals, branding, and graphics that make your business stand out."
         }
     ];
 

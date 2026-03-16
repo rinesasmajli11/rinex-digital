@@ -46,11 +46,10 @@ const Counter: React.FC<{ end: number; duration?: number; suffix?: string }> = (
 };
 
 const Hero: React.FC = () => {
-    const [mounted, setMounted] = useState(false);
+    const [mounted] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-        setMounted(true);
 
         const video = videoRef.current;
         if (!video) return;
