@@ -20,7 +20,7 @@ const TeamSection: React.FC = () => {
         },
         {
             name: "Rina Hoti",
-            role: "Graphic Designer",
+            role: "Software Engineer",
             image: "/rina.jpeg",
             description: "Specialist in visual communication, branding, and creative design for digital and print media."
         },
