@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Syne, Outfit } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "../src/contexts/LanguageContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,7 +35,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${syne.variable} ${outfit.variable} font-sans antialiased bg-[#0b0f2a] text-white overflow-x-hidden`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

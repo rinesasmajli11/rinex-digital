@@ -8,21 +8,23 @@ import 'swiper/css';
 
 import SectionHeading from '../molecules/SectionHeading';
 import MemberCard from '../molecules/MemberCard';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const TeamSection: React.FC = () => {
+    const { t } = useLanguage();
     const swiperRef = useRef<SwiperType | null>(null);
 
     const members = [
         {
-            name: "Rinesa Smajli",
-            role: "Software Engineer",
+            name: t.team.members.rinesa.name,
+            role: t.team.members.rinesa.role,
             image: "/rinesa.jpeg"
         },
         {
-            name: "Rina Hoti",
-            role: "Software Engineer",
+            name: t.team.members.rina.name,
+            role: t.team.members.rina.role,
             image: "/rina.jpeg",
-            description: "Specialist in visual communication, branding, and creative design for digital and print media."
+            description: t.team.members.rina.description
         },
 
     ];
@@ -42,10 +44,10 @@ const TeamSection: React.FC = () => {
                         <div className="flex flex-col md:flex-row md:items-end justify-between items-start gap-6">
                             <div className="text-center md:text-left mx-auto md:mx-0">
                                 <SectionHeading
-                                    subtitle="Expert Team"
-                                    title="Meet Our"
-                                    gradientTitle="Creative Minds"
-                                    description="A passionate team of developers, designers, and digital specialists dedicated to building innovative solutions and delivering exceptional digital experiences."
+                                    subtitle={t.team.subtitle}
+                                    title={t.team.title}
+                                    gradientTitle={t.team.gradientTitle}
+                                    description={t.team.description}
                                     centered={false}
                                 />
                             </div>

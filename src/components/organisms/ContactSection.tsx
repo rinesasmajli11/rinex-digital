@@ -3,8 +3,10 @@
 import React from 'react';
 import SectionHeading from '../molecules/SectionHeading';
 import Button from '../atoms/Button';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const ContactSection: React.FC = () => {
+    const { t } = useLanguage();
     const contactInfo = [
         {
             icon: (
@@ -12,9 +14,9 @@ const ContactSection: React.FC = () => {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.19-2.19a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
             ),
-            title: "Call Us",
-            label: "Phone Number",
-            details: "+383 49 266 940 | +383 49 650 161"
+            title: t.contact.info.callUs.title,
+            label: t.contact.info.callUs.label,
+            details: t.contact.info.callUs.details
         },
         {
             icon: (
@@ -22,9 +24,9 @@ const ContactSection: React.FC = () => {
                     <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
             ),
-            title: "Email Us",
-            label: "Email Address",
-            details: "rinex.digital@gmail.com"
+            title: t.contact.info.emailUs.title,
+            label: t.contact.info.emailUs.label,
+            details: t.contact.info.emailUs.details
         }
     ];
 
@@ -37,15 +39,11 @@ const ContactSection: React.FC = () => {
 
             <div className="max-w-6xl mx-auto px-6 relative z-10 flex flex-col items-center">
                 <div className="text-center mb-12 md:mb-16 reveal-on-scroll">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[9px] font-black uppercase tracking-[0.2em] text-white/50 mb-4">
-                        <span className="w-1 h-1 rounded-full bg-primary animate-pulse"></span>
-                        Connect With Excellence
-                    </div>
                     <SectionHeading
-                        subtitle=""
-                        title="Let's Work"
-                        gradientTitle="Together"
-                        description="Our team is ready to turn your vision into reality."
+                        subtitle={t.contact.subtitle}
+                        title={t.contact.title}
+                        gradientTitle={t.contact.gradientTitle}
+                        description={t.contact.description}
                         centered={true}
                     />
                 </div>

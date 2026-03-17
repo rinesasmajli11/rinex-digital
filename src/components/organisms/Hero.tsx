@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import Button from '../atoms/Button';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Counter: React.FC<{ end: number; duration?: number; suffix?: string }> = ({ end, duration = 2000, suffix = "" }) => {
     const [count, setCount] = useState(0);
@@ -46,6 +47,7 @@ const Counter: React.FC<{ end: number; duration?: number; suffix?: string }> = (
 };
 
 const Hero: React.FC = () => {
+    const { t } = useLanguage();
     const [mounted] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -69,7 +71,7 @@ const Hero: React.FC = () => {
         playVideo();
     }, []);
 
-    const title = "Building Modern Websites & Digital Experiences";
+    const title = t.hero.title;
     const words = title.split(" ");
 
     return (
@@ -118,7 +120,7 @@ const Hero: React.FC = () => {
                 </h1>
 
                 <p className="max-w-[320px] md:max-w-md text-[14px] md:text-[20px] text-white/72 leading-[1.7] tracking-[0.01em] mb-8 animate-text-reveal font-outfit" style={{ animationDelay: '0.8s' }}>
-                    We build modern websites and digital solutions that help your business grow.
+                    {t.hero.description}
                 </p>
 
                 {/* --- CTAs (Single Button with Gold Gradient) --- */}
@@ -127,16 +129,16 @@ const Hero: React.FC = () => {
                         variant="primary"
                         className="px-10 py-4 rounded-2xl text-[11px] font-black uppercase tracking-[0.24em] shadow-[0_20px_40px_rgba(222,201,132,0.15)] hover:bg-primary-hover transition-all hover:scale-105 active:scale-95 shimmer-effect !border-[#DEC984] !text-[#DEC984]"
                     >
-                        Book a Consultation
+                        {t.hero.bookConsultation}
                     </Button>
                 </div>
 
                 {/* --- STATS BAR (Syne + Outfit Mix) --- */}
                 <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-6 mt-16 md:mt-24 w-full max-w-3xl animate-text-reveal" style={{ animationDelay: '1.2s' }}>
                     {[
-                        { label: 'Success Rate', value: 99, suffix: '%' },
-                        { label: 'Happy Clients', value: 20, suffix: '+' },
-                        { label: 'Years Experience', value: 5, suffix: '+ ' }
+                        { label: t.hero.stats.successRate, value: 99, suffix: '%' },
+                        { label: t.hero.stats.happyClients, value: 20, suffix: '+' },
+                        { label: t.hero.stats.yearsExperience, value: 5, suffix: '+ ' }
                     ].map((stat, i) => (
                         <div key={i} className="glass p-3 md:p-6 rounded-[1.2rem] md:rounded-[1.5rem] border border-white/5 text-center group hover:border-[#DEC984]/30 transition-all duration-500">
                             <p className="text-[7px] md:text-[9px] font-bold text-[#DEC984] uppercase tracking-[0.3em] mb-2 md:mb-1.5">

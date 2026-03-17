@@ -8,8 +8,10 @@ import 'swiper/css';
 
 import SectionHeading from '../molecules/SectionHeading';
 import FeatureCard from '../molecules/FeatureCard';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AboutSection: React.FC = () => {
+    const { t } = useLanguage();
     const swiperRef = useRef<SwiperType | null>(null);
 
     const features = [
@@ -19,9 +21,9 @@ const AboutSection: React.FC = () => {
                     <path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" />
                 </svg>
             ),
-            title: "Web Development",
-            subtitle: "Custom Websites Built for Performance",
-            description: "We build fast, modern, and scalable websites designed to strengthen your brand and support business growth."
+            title: t.about.features.webDev.title,
+            subtitle: t.about.features.webDev.subtitle,
+            description: t.about.features.webDev.description
         },
         {
             icon: (
@@ -29,9 +31,9 @@ const AboutSection: React.FC = () => {
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
             ),
-            title: "UI / UX Design",
-            subtitle: "Design That Delivers Exceptional User Experience",
-            description: "We create intuitive and visually refined interfaces focused on usability, clarity, and strong brand presence."
+            title: t.about.features.uiUx.title,
+            subtitle: t.about.features.uiUx.subtitle,
+            description: t.about.features.uiUx.description
         },
         {
             icon: (
@@ -39,9 +41,9 @@ const AboutSection: React.FC = () => {
                     <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />
                 </svg>
             ),
-            title: "Digital Marketing & Content",
-            subtitle: "Content and Strategy That Builds Your Brand",
-            description: "We develop clear content and smart digital strategies that help your brand reach and engage the right audience."
+            title: t.about.features.digitalMarketing.title,
+            subtitle: t.about.features.digitalMarketing.subtitle,
+            description: t.about.features.digitalMarketing.description
         }
     ];
 
@@ -58,10 +60,10 @@ const AboutSection: React.FC = () => {
                 <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-8 px-0">
                     <div className="max-w-2xl text-center md:text-left mx-auto md:mx-0">
                         <SectionHeading
-                            subtitle="Who We Are"
-                            title="Transforming Ideas into"
-                            gradientTitle="Digital Reality"
-                            description="Rinex Digital is a full-service digital agency dedicated to elevating brands through innovation and design. We combine creative passion with technical expertise to build solutions that matter."
+                            subtitle={t.about.subtitle}
+                            title={t.about.title}
+                            gradientTitle={t.about.gradientTitle}
+                            description={t.about.description}
                             centered={false}
                         />
                     </div>

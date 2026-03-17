@@ -2,8 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Logo from '../atoms/Logo';
 import Button from '../atoms/Button';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
+    const { t } = useLanguage();
     const socialLinks = [
         {
             name: 'Facebook',
@@ -36,14 +38,7 @@ const Footer: React.FC = () => {
         }
     ];
 
-    const services = [
-        'Website Development',
-        'UI / UX Design',
-        'Mobile Apps',
-        'Social Media',
-        'Content Creation',
-        'Copywriting'
-    ];
+    const services = t.footer.services;
 
     return (
         <footer className="relative pt-16 pb-12 overflow-hidden border-t border-white/5 bg-[#050505]">
@@ -59,7 +54,7 @@ const Footer: React.FC = () => {
                     <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left gap-8">
                         <Logo />
                         <p className="text-white/50 text-sm leading-relaxed max-w-sm">
-                            Transforming businesses through innovative digital strategies. We help brands grow and succeed in the digital age by building high-performing websites and digital products.
+                            {t.footer.description}
                         </p>
 
                         {/* Social Links */}
@@ -92,7 +87,7 @@ const Footer: React.FC = () => {
                     <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
                         <h4 className="text-white font-bold text-base font-plus-jakarta">Company</h4>
                         <ul className="flex flex-col gap-4">
-                            {['About Us', 'Careers', 'Case Studies', 'Blog', 'Contact'].map((item) => (
+                            {t.footer.company.map((item) => (
                                 <li key={item}>
                                     <Link href="#" className="text-white/40 text-[13px] hover:text-primary transition-colors duration-300">
                                         {item}
@@ -104,19 +99,19 @@ const Footer: React.FC = () => {
 
                     {/* Newsletter Column (4/12) */}
                     <div className="hidden lg:flex lg:col-span-4 flex-col items-center lg:items-start text-center lg:text-left gap-6">
-                        <h4 className="text-white font-bold text-base font-plus-jakarta">Stay Updated</h4>
+                        <h4 className="text-white font-bold text-base font-plus-jakarta">{t.footer.stayUpdated.title}</h4>
                         <p className="text-white/40 text-[13px] leading-relaxed max-w-sm mx-auto lg:mx-0">
-                            Subscribe to our newsletter for the latest digital insights and agency updates.
+                            {t.footer.stayUpdated.description}
                         </p>
 
                         <div className="flex flex-col gap-3 w-full max-w-sm">
                             <input
                                 type="email"
-                                placeholder="Enter your email"
+                                placeholder={t.footer.stayUpdated.placeholder}
                                 className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white text-sm outline-none focus:border-primary/50 transition-colors placeholder:text-white/10"
                             />
                             <Button variant="primary" className="w-full py-4 rounded-xl text-xs uppercase tracking-widest">
-                                Subscribe
+                                {t.footer.stayUpdated.subscribe}
                             </Button>
                         </div>
                     </div>
@@ -125,11 +120,11 @@ const Footer: React.FC = () => {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-6 text-center">
                     <p className="text-white/20 text-[12px]">
-                        © 2025 Rinex Digital. All rights reserved.
+                        {t.footer.bottom.copyright}
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-8">
-                        {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
+                        {t.footer.bottom.links.map((item) => (
                             <Link key={item} href="#" className="text-white/20 text-[12px] hover:text-white transition-colors">
                                 {item}
                             </Link>

@@ -6,19 +6,22 @@ import Logo from '../atoms/Logo';
 import NavMenu from '../molecules/NavMenu';
 import Button from '../atoms/Button';
 import NavLink from '../atoms/NavLink';
-
-const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Members', href: '#team' },
-    { name: 'Contact', href: '#contact' },
-];
+import LanguageSwitcher from '../molecules/LanguageSwitcher';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Header: React.FC = () => {
+    const { t } = useLanguage();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const navLinks = [
+        { name: t.nav.home, href: '/' },
+        { name: t.nav.about, href: '#about' },
+        { name: t.nav.services, href: '#services' },
+        { name: t.nav.portfolio, href: '#portfolio' },
+        { name: t.nav.team, href: '#team' },
+        { name: t.nav.contact, href: '#contact' },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,8 +41,10 @@ const Header: React.FC = () => {
 
                 <div className="flex items-center gap-3">
                     <Button variant="outline" className="hidden lg:flex !px-6 !py-2.5 !text-[12px] !border-[#DEC984] !text-[#DEC984]">
-                        Book a Consultation
+                        {t.header.bookConsultation}
                     </Button>
+
+                    <LanguageSwitcher />
 
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -69,8 +74,8 @@ const Header: React.FC = () => {
                 <div className="relative min-h-screen h-full flex flex-col px-5 pt-20 pb-8 overflow-y-auto">
                     <div className="flex flex-col gap-5">
                         <div className={`flex flex-col gap-1.5 transition-all duration-700 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                            <span className="text-[10px] uppercase tracking-[0.35em] text-[#DEC984] font-black">Navigation</span>
-                            <h3 className="text-[22px] font-bold text-white font-outfit">Explore Rinex Digital</h3>
+                            <span className="text-[10px] uppercase tracking-[0.35em] text-[#DEC984] font-black">{t.header.navigation}</span>
+                            <h3 className="text-[22px] font-bold text-white font-outfit">{t.header.exploreRinex}</h3>
                         </div>
 
                         <nav className="grid grid-cols-1 gap-2 w-full">

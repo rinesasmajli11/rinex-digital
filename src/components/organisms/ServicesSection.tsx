@@ -1,8 +1,11 @@
 import React from 'react';
 import SectionHeading from '../molecules/SectionHeading';
 import ServiceCard from '../molecules/ServiceCard';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const ServicesSection: React.FC = () => {
+    const { t } = useLanguage();
+
     const services = [
         {
             icon: (
@@ -11,8 +14,8 @@ const ServicesSection: React.FC = () => {
                     <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
             ),
-            title: "Website Development",
-            description: "We build modern, fast, and responsive websites tailored to your brand and business goals."
+            title: t.services.items.websiteDev.title,
+            description: t.services.items.websiteDev.description
         },
         {
             icon: (
@@ -22,8 +25,8 @@ const ServicesSection: React.FC = () => {
                     <path d="M12 8v8"></path>
                 </svg>
             ),
-            title: "UI / UX Design",
-            description: "We design intuitive and visually engaging interfaces that improve usability and user experience."
+            title: t.services.items.uiUxDesign.title,
+            description: t.services.items.uiUxDesign.description
         },
         {
             icon: (
@@ -33,8 +36,8 @@ const ServicesSection: React.FC = () => {
                     <path d="M10 5h4"></path>
                 </svg>
             ),
-            title: "Mobile App Development",
-            description: "We design and develop modern mobile applications that deliver smooth performance and a great user experience across devices."
+            title: t.services.items.mobileApp.title,
+            description: t.services.items.mobileApp.description
         },
         {
             icon: (
@@ -45,8 +48,8 @@ const ServicesSection: React.FC = () => {
                     <path d="M12 9v3"></path>
                 </svg>
             ),
-            title: "Social Media Management",
-            description: "We manage and grow your social media presence with strategic content and consistent branding."
+            title: t.services.items.socialMedia.title,
+            description: t.services.items.socialMedia.description
         },
         {
             icon: (
@@ -55,8 +58,8 @@ const ServicesSection: React.FC = () => {
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                 </svg>
             ),
-            title: "Content Creation",
-            description: "We create engaging digital content that strengthens your brand and connects with your audience."
+            title: t.services.items.contentCreation.title,
+            description: t.services.items.contentCreation.description
         },
         {
             icon: (
@@ -66,8 +69,8 @@ const ServicesSection: React.FC = () => {
                     <circle cx="8.5" cy="8.5" r=".5"/>
                 </svg>
             ),
-            title: "Graphic Design",
-            description: "We create stunning visuals, branding, and graphics that make your business stand out."
+            title: t.services.items.graphicDesign.title,
+            description: t.services.items.graphicDesign.description
         }
     ];
 
@@ -82,10 +85,10 @@ const ServicesSection: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
                 <div className="max-w-4xl mx-auto">
                     <SectionHeading
-                        subtitle="Services"
-                        title="Digital Solutions That"
-                        gradientTitle="Elevate Your Brand"
-                        description="We provide modern web development, design, and digital marketing services that help businesses build a strong and successful online presence."
+                        subtitle={t.services.subtitle}
+                        title={t.services.title}
+                        gradientTitle={t.services.gradientTitle}
+                        description={t.services.description}
                         centered={true}
                     />
                 </div>
